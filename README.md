@@ -9,11 +9,28 @@ My public log of becoming an AI engineer in 12 months, building on 22 years in e
 ## Progress
 
 <!-- PROGRESS:START -->
+**Now:** week 1 of 52 · Phase 0: Setup and orientation · this week: Setup and tooling
+
+`░░░░░░░░░░░░░░░░░░░░` 2% · 1 week logged
+
+| Phase | Weeks | Focus | Project | Status |
+| --- | --- | --- | --- | --- |
+| 0 | 1–2 | Setup and orientation | Project template, this log, profile | ⏳ Week 1 of 2 |
+| 1 | 3–10 | Python, maths and data foundations | Public-data analysis | ⬜ |
+| 2 | 11–18 | Classical machine learning | Taxonomy auto-tagger (API + Docker) | ⬜ |
+| 3 | 19–28 | Deep learning and transformers | GPT from scratch | ⬜ |
+| 4 | 29–36 | LLM apps, RAG and GraphRAG | Flagship 1: knowledge assistant | ⬜ |
+| 5 | 37–44 | Agents, tool use, MCP and evals | Flagship 2: data-steward agent | ⬜ |
+| 6 | 45–50 | Production, LLMOps and fine-tuning | Hardened deployment + text-to-SPARQL model | ⬜ |
+| 7 | 51–52 | Portfolio and job readiness | Case studies, open-source PR | ⬜ |
 <!-- PROGRESS:END -->
 
 ## Weekly log
 
 <!-- LOG:START -->
+| Week | Start | Phase | Theme | Built | Hours | Notes |
+| --- | --- | --- | --- | --- | --- | --- |
+| 1 | 2026-11-22 | 0 | Setup and tooling | ai-project-template, this learning log and my GitHub profile | – | [week 01](logs/week-01.md) |
 <!-- LOG:END -->
 
 New entries go in `logs/` using [the weekly template](logs/_template.md). The tables above rebuild themselves each time a log is added.
@@ -29,6 +46,7 @@ Shipped projects appear here with a demo link, a write-up and eval results.
 ## Papers read
 
 <!-- PAPERS:START -->
+_None yet. Add a `paper:` line to a weekly log and it appears here._
 <!-- PAPERS:END -->
 
 ## Certifications
