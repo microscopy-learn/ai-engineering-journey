@@ -9,13 +9,11 @@ My public log of becoming an AI engineer in 12 months, building on 22 years in e
 ## Progress
 
 <!-- PROGRESS:START -->
-**Now:** week 1 of 52 · Phase 0: Setup and orientation · this week: Setup and tooling
-
-`░░░░░░░░░░░░░░░░░░░░` 2% · 1 week logged
+**Learning starts 1 January 2027.** Setup is done; week 1 is the first entry.
 
 | Phase | Weeks | Dates | Focus | Project | Status |
 | --- | --- | --- | --- | --- | --- |
-| 0 | 1–2 | 1–17 Jan 2027 | Setup and orientation | Project template, this log, profile | ⏳ Week 1 of 2 |
+| 0 | 1–2 | 1–17 Jan 2027 | Setup and orientation | Project template, this log, profile | ⏳ Starts 1 January 2027 |
 | 1 | 3–10 | 18 Jan – 14 Mar 2027 | Python, maths and data foundations | Public-data analysis | ⬜ |
 | 2 | 11–18 | 15 Mar – 9 May 2027 | Classical machine learning | Taxonomy auto-tagger (API + Docker) | ⬜ |
 | 3 | 19–28 | 10 May – 18 Jul 2027 | Deep learning and transformers | GPT from scratch | ⬜ |
@@ -30,7 +28,7 @@ My public log of becoming an AI engineer in 12 months, building on 22 years in e
 <!-- LOG:START -->
 | Week | Start | Phase | Theme | Built | Hours | Notes |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | 2026-11-22 | 0 | Setup and tooling | ai-project-template, this learning log and my GitHub profile | – | [week 01](logs/week-01.md) |
+| 0 | 2026-11-22 | 0 | Pre-start setup | ai-project-template, this learning log and my GitHub profile | – | [week 00](logs/week-00.md) |
 <!-- LOG:END -->
 
 New entries go in `logs/` using [the weekly template](logs/_template.md). The tables above rebuild themselves each time a log is added.
