@@ -1,3 +1,12 @@
+---
+week: 1
+phase: 0
+start: 2026-11-22
+hours:
+theme: Setup and tooling
+built: ai-project-template, this learning log and my GitHub profile
+---
+
 # Week 01: Setup and tooling
 
 **Dates:** November 2026 · **Phase:** 0
@@ -12,4 +21,4 @@
 - This learning log and my GitHub profile README.
 
 ## Next week
-- Start Phase 1: Python for data work, and the first public-data analysis notebook.
+- Finish Phase 0 setup, then start Phase 1: Python for data work and the first public-data analysis notebook.
