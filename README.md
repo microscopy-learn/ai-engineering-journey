@@ -4,7 +4,7 @@ My public log of becoming an AI engineer in 12 months, building on 22 years in e
 
 **Goal:** design and ship LLM systems grounded in enterprise knowledge graphs: GraphRAG, AI agents with MCP, evals, and fine-tuned models, each with a live demo, open code and an eval report.
 
-**Started:** November 2026 · **Pace:** 12–15 hours a week · **Updated:** automatically from my weekly logs
+**Learning starts:** 1 January 2027 (setup done in November 2026) · **Pace:** 12–15 hours a week · **Updated:** automatically from my weekly logs
 
 ## Progress
 
