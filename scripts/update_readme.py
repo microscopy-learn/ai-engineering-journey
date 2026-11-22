@@ -24,16 +24,19 @@ LOGS = ROOT / "logs"
 README = ROOT / "README.md"
 TOTAL_WEEKS = 52
 
-# Phase number -> (name, first week, last week, project), matching the 12-month roadmap.
+START = "1 January 2027"
+
+# Phase number -> (name, first week, last week, project, dates), matching the 12-month roadmap.
+# Week 1 is Fri 1 Jan to Sun 10 Jan 2027; every later week runs Monday to Sunday.
 PHASES = {
-    0: ("Setup and orientation", 1, 2, "Project template, this log, profile"),
-    1: ("Python, maths and data foundations", 3, 10, "Public-data analysis"),
-    2: ("Classical machine learning", 11, 18, "Taxonomy auto-tagger (API + Docker)"),
-    3: ("Deep learning and transformers", 19, 28, "GPT from scratch"),
-    4: ("LLM apps, RAG and GraphRAG", 29, 36, "Flagship 1: knowledge assistant"),
-    5: ("Agents, tool use, MCP and evals", 37, 44, "Flagship 2: data-steward agent"),
-    6: ("Production, LLMOps and fine-tuning", 45, 50, "Hardened deployment + text-to-SPARQL model"),
-    7: ("Portfolio and job readiness", 51, 52, "Case studies, open-source PR"),
+    0: ("Setup and orientation", 1, 2, "Project template, this log, profile", "1–17 Jan 2027"),
+    1: ("Python, maths and data foundations", 3, 10, "Public-data analysis", "18 Jan – 14 Mar 2027"),
+    2: ("Classical machine learning", 11, 18, "Taxonomy auto-tagger (API + Docker)", "15 Mar – 9 May 2027"),
+    3: ("Deep learning and transformers", 19, 28, "GPT from scratch", "10 May – 18 Jul 2027"),
+    4: ("LLM apps, RAG and GraphRAG", 29, 36, "Flagship 1: knowledge assistant", "19 Jul – 12 Sep 2027"),
+    5: ("Agents, tool use, MCP and evals", 37, 44, "Flagship 2: data-steward agent", "13 Sep – 7 Nov 2027"),
+    6: ("Production, LLMOps and fine-tuning", 45, 50, "Hardened deployment + text-to-SPARQL model", "8 Nov – 19 Dec 2027"),
+    7: ("Portfolio and job readiness", 51, 52, "Case studies, open-source PR", "20 Dec 2027 – 2 Jan 2028"),
 }
 
 
@@ -79,25 +82,30 @@ def render_progress(entries: list[dict]) -> str:
     latest = entries[-1] if entries else None
     current_phase = latest["phase"] if latest else 0
     current_week = latest["week"] if latest else 0
-    hours = sum(e["hours_num"] or 0 for e in entries)
+    learning = [e for e in entries if e["week"] >= 1]
+    hours = sum(e["hours_num"] or 0 for e in learning)
     lines = []
-    if latest:
+    if current_week >= 1:
         name = PHASES.get(current_phase, ("?",))[0]
         lines += [
             f"**Now:** week {current_week} of {TOTAL_WEEKS} · Phase {current_phase}: {name}"
             + (f" · this week: {latest['theme']}" if latest.get("theme") else ""),
             "",
             f"`{bar(current_week, TOTAL_WEEKS)}` {round(100 * current_week / TOTAL_WEEKS)}%"
-            f" · {len(entries)} week{'s' if len(entries) != 1 else ''} logged"
+            f" · {len(learning)} week{'s' if len(learning) != 1 else ''} logged"
             + (f" · {hours:g} hours so far" if hours else ""),
             "",
         ]
+    else:
+        lines += [f"**Learning starts {START}.** Setup is done; week 1 is the first entry.", ""]
     lines += [
-        "| Phase | Weeks | Focus | Project | Status |",
-        "| --- | --- | --- | --- | --- |",
+        "| Phase | Weeks | Dates | Focus | Project | Status |",
+        "| --- | --- | --- | --- | --- | --- |",
     ]
-    for num, (name, first, last, project) in PHASES.items():
-        if not latest or num > current_phase:
+    for num, (name, first, last, project, dates) in PHASES.items():
+        if current_week < 1:
+            status = f"⏳ Starts {START}" if num == 0 else "⬜"
+        elif num > current_phase:
             status = "⬜"
         elif num < current_phase:
             status = "✅ Done"
@@ -106,7 +114,7 @@ def render_progress(entries: list[dict]) -> str:
             into = min(max(current_week - first + 1, 1), span)
             status = f"⏳ Week {into} of {span}"
         weeks = f"{first}–{last}" if first != last else str(first)
-        lines.append(f"| {num} | {weeks} | {name} | {project} | {status} |")
+        lines.append(f"| {num} | {weeks} | {dates} | {name} | {project} | {status} |")
     return "\n".join(lines)
 
 
